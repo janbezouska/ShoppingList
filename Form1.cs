@@ -23,11 +23,15 @@ namespace ShoppingList
 
         private void ButAdd_Click(object sender, EventArgs e)
         {
-            butAdd.Top += 25;
+            if (butAdd.Top + butAdd.Height * 2 + 40 >= this.Height) { }
+            else
+            {
+                butAdd.Top += 25;
 
-            this.Controls.Add(CreateButton());
-            this.Controls.Add(CreateTextBox());
-            this.Controls.Add(CreateCheckBox());
+                this.Controls.Add(CreateButton());
+                this.Controls.Add(CreateTextBox());
+                this.Controls.Add(CreateCheckBox());
+            }
         }
 
         private void Button_Click(object sender, EventArgs e)
